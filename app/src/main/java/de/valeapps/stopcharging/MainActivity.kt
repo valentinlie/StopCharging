@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
                 suShell.addCommand("chmod u+w " + XIAOMI_FILE)
                 suShell.addCommand("echo 0 > " + XIAOMI_FILE)
                 cfInitialized = true
-                Toast.makeText(this, "Started charging..", Toast.LENGTH_SHORT).show()
             }
+            Toast.makeText(this, "Started charging..", Toast.LENGTH_SHORT).show()
         }
     }
 }
