@@ -6,14 +6,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import eu.chainfire.libsuperuser.Shell
 
+
 const val DEFAULT_FILE = "/sys/class/power_supply/battery/charging_enabled"
-const val XIAOMI_FILE = "/sys/class/power_supply/battery/input_suspend"
+const val XIAOMI_FILE = "/sys/class/qcom-battery/input_suspend"
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         if (!Shell.SU.available()) {
             Toast.makeText(this, "No Root enabled!", Toast.LENGTH_LONG).show()
             finishAffinity()
